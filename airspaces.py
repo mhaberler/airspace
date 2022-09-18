@@ -85,7 +85,7 @@ def  within_airspace(alt_ft, abs, ab_u,  ats, at_u):
         below_at = alt_ft < at
     if at_u   == "FL":
         below_at = fl < at
-    return above_ab and below_at
+    return (above_ab, below_at)
 
 
 
@@ -98,10 +98,15 @@ point = Point(10, 47)
 
 # Stiwoll
 point = Point(15.21197450, 47.12919800)
+# Thalerhof
+
+point = Point(15.460366012549866,46.95808587082531)
 
 alt_ft = pa_ft 
 
-alt_ft = 10000
+alt_ft = 7100
+
+print(f"altitude {alt_ft}ft")
 
 # check each polygon to see if it contains the point
 for feature in js['features']:
@@ -112,6 +117,11 @@ for feature in js['features']:
     ab_u = feature["properties"]["AB_U"]
     polygon = shape(feature['geometry'])
     if polygon.contains(point):
-        within = within_airspace(alt_ft,ab, ab_u,  at, at_u)
-
-        print(f"Found containing polygon: {name} {ab}{ab_u} {at}{at_u} within({alt_ft}ft)={within}")
+        (above, below) = within_airspace(alt_ft,ab, ab_u,  at, at_u)
+        if above and below:
+            print(f"within; '{name}' {ab}{ab_u} {at}{at_u}", feature["properties"])
+        else:
+            if above:
+                print(f"above '{name}' {ab}{ab_u} {at}{at_u}")
+            if below:
+                print(f"below '{name}' {ab}{ab_u} {at}{at_u}")        
