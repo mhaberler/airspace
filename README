@@ -1,0 +1,8 @@
+airspace stack example:
+
+$ python airspaces.py 
+position=POINT (15.460366012549866 46.95808587082531), altitude 7100ft:
+above 'CTR LOWG (GRAZ TOWER:118.200)' 0F 4500F {'CAT': 'CTR', 'ID': '282355', 'C': 'AT', 'N': 'CTR LOWG (GRAZ TOWER:118.200)', 'AT_REF': 'MSL', 'AT_U': 'F', 'AT': '4500', 'AB_REF': 'GND', 'AB_U': 'F', 'AB': '0', 'bnd': [[46.72778, 15.24889], [47.135, 15.67361]]}
+within; 'TMA LOWG 1' 2500F 195FL {'CAT': 'D', 'ID': '282379', 'C': 'AT', 'N': 'TMA LOWG 1', 'AT_REF': 'STD', 'AT_U': 'FL', 'AT': '195', 'AB_REF': 'MSL', 'AB_U': 'F', 'AB': '2500', 'bnd': [[46.72778, 15.24583], [47.16472, 15.76806]]}
+below 'TMA LOWG 1' 195FL 245FL {'CAT': 'C', 'ID': '282378', 'C': 'AT', 'N': 'TMA LOWG 1', 'AT_REF': 'STD', 'AT_U': 'FL', 'AT': '245', 'AB_REF': 'STD', 'AB_U': 'FL', 'AB': '195', 'bnd': [[46.72778, 15.24583], [47.16472, 15.76806]]}
+
